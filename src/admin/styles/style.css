@@ -1,0 +1,589 @@
+/* Default Styling */
+:root {
+  --main: #c5d56d;
+  --title: #848d50;
+  --back: #fff;
+  --backSub: #f3f3e9;
+  --text: #1b1b1b;
+  --border: #6f6f6f;
+  --shadow: #d0d0d0;
+  --borderLight: #aaa;
+  --err: #e87068;
+  --errBack: #ffeae4;
+}
+
+*::before,
+*::after,
+* {
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Noto Sans JP", sans-serif;
+  color: var(--text);
+  background-color: var(--back);
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select,
+textarea {
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"],
+select {
+  height: 30px;
+  padding: 0px 8px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  padding: 2px 10px;
+  line-height: 1.8;
+}
+
+input[type="text"]:focus-visible,
+input[type="date"]:focus-visible,
+input[type="time"]:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 1px solid var(--border);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+input[type="text"]::placeholder,
+input[type="date"]::placeholder,
+input[type="time"]::placeholder,
+textarea::placeholder {
+  color: var(--borderLight);
+}
+
+.readonly {
+  pointer-events: none;
+}
+
+button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button {
+  height: 36px;
+  width: 150px;
+  padding: 8.5px;
+  margin: 10px 25px;
+  font-size: 16px;
+  box-shadow: 0 2px 6px 0 var(--shadow);
+  border-radius: 8px;
+  color: var(--back);
+  background-color: var(--title);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button-inversion {
+  color: var(--title);
+  background-color: var(--back);
+}
+
+.app-logo {
+  font-family: "Train One", system-ui;
+  font-weight: 500;
+  letter-spacing: -0.05em;
+}
+
+.menu {
+  position: fixed;
+  height: 50px;
+  width: 100%;
+  top: 70px;
+  left: 0;
+  padding: 0 24px;
+  box-shadow: 0 3px 6px 0 var(--shadow);
+  background-color: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+  z-index: 2;
+}
+
+.menu-content {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.menu-button {
+  height: 28px;
+  width: 96px;
+  padding: 4px;
+  margin: 10px 12px;
+  font-size: 15px;
+  color: var(--back);
+  background-color: var(--main);
+  box-shadow: 0 2px 6px 1px var(--shadow);
+  border-radius: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.menu-button-inversion {
+  color: var(--title);
+  background-color: var(--back);
+}
+
+.menu-submit {
+  display: flex;
+  align-items: center;
+}
+
+.menu-submit-inavlid {
+  color: var(--err);
+  font-size: 15px;
+  margin-right: 16px;
+  text-align: right;
+}
+
+.menu-submit-register {
+  color: var(--title);
+  font-weight: 600;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(100, 100, 100, 0.5);
+  backdrop-filter: blur(5px);
+  padding-top: 180px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.2s;
+  z-index: 4;
+}
+
+.modal-content {
+  position: relative;
+  width: 700px;
+  height: 250px;
+  background-color: var(--back);
+  margin: 0 auto;
+  padding: 40px 50px;
+  border-radius: 20px;
+  border: 5px solid var(--shadow);
+}
+
+.modal-title {
+  text-align: center;
+  color: var(--title);
+  font-size: 24px;
+}
+
+.modal-text {
+  text-align: center;
+  color: var(--title);
+  font-size: 16px;
+  margin: 16px;
+}
+
+.modal-buttons-flex {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+  margin: auto;
+}
+
+main {
+  padding-top: 120px;
+}
+
+/* Header */
+.header-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  padding: 8px 36px;
+
+  background-color: var(--main);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+}
+
+.header-title {
+  font-size: 36px;
+  color: var(--back);
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-family: "Zen Maru Gothic", sans-serif;
+}
+
+.header-title span {
+  font-size: 16px;
+}
+
+.header-app-logo {
+  color: var(--title);
+  font-size: 30px;
+}
+
+/* Home */
+.home {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.home section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.home select {
+  width: 300px;
+  margin-bottom: 24px;
+}
+
+.home-title {
+  color: var(--title);
+  font-size: 22px;
+  margin-bottom: 24px;
+  padding: 3px;
+  width: 400px;
+  border-bottom: 2px solid var(--main);
+  margin: 0 auto 16px;
+}
+
+/* Register */
+.register-menu-title {
+  color: var(--title);
+  font-size: 18px;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-weight: 400;
+}
+
+.register-content {
+  width: 100%;
+  min-width: 860px;
+  margin: 10px auto 48px;
+}
+
+.register-required {
+  width: 90%;
+  max-width: 900px;
+  min-width: 750px;
+  color: var(--border);
+  margin: 0 auto 24px;
+  padding-left: 10px;
+}
+
+.register-init {
+  display: flex;
+  margin-right: 24px;
+}
+
+.register-init-name {
+  margin-right: 24px;
+}
+
+.register-init label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--title);
+  margin-right: 16px;
+}
+
+.register-init-question {
+  display: flex;
+}
+
+.register-init-question label {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.register-init-button {
+  font-size: 18px;
+  font-weight: 500;
+  background-color: var(--back);
+  color: var(--main);
+  border: 2px solid var(--main);
+  border-radius: 50%;
+  height: 24px;
+  width: 24px;
+  text-align: center;
+  margin-right: 8px;
+  transition: 0.2s;
+}
+
+.register-init-button:hover {
+  background-color: var(--main);
+  color: var(--back);
+}
+
+.register-sheet {
+  width: 90%;
+  max-width: 900px;
+  min-width: 750px;
+  margin: 0 auto;
+  padding: 20px 0 40px;
+  border: 2px solid var(--borderLight);
+  border-radius: 12px;
+}
+
+.register-question {
+  padding: 20px 30px;
+  margin: 0 30px 20px;
+  border: 2px dashed var(--borderLight);
+  border-radius: 10px;
+}
+
+.register-question-title {
+  margin-bottom: 12px;
+}
+
+.register-question-title label {
+  font-size: 18px;
+  color: var(--title);
+  margin-right: 12px;
+}
+
+.register-question-title input[type="text"] {
+  width: 500px;
+}
+
+.register-question-button {
+  background-color: var(--back);
+  color: var(--main);
+  border: 2px solid var(--main);
+  font-size: 16px;
+  font-weight: 600;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  margin-right: 3px;
+  transition: 0.2s;
+}
+
+.register-question-button:hover {
+  background-color: var(--main);
+  color: var(--back);
+}
+
+.register-question-kind label {
+  color: var(--title);
+  margin-right: 6px;
+  font-size: 16px;
+}
+
+.register-question-kind select {
+  height: 26px;
+  font-size: 14px;
+  padding: 0px 6px;
+  margin-right: 4px;
+}
+
+.register-choices {
+  padding: 12px 30px;
+  margin: 10px;
+  background-color: var(--backSub);
+  border-radius: 8px;
+}
+
+.register-choices-title {
+  margin-bottom: 8px;
+}
+
+.register-choices-title label {
+  color: var(--title);
+  font-size: 16px;
+  margin-right: 6px;
+}
+
+.register-choices-title input[type="text"] {
+  width: 400px;
+}
+
+.register-choice-item input[type="text"],
+.register-choice-item select,
+.register-choice-item textarea {
+  width: 500px;
+  font-size: 14px;
+}
+
+.register-choice-item input[type="text"],
+.register-choice-item select {
+  height: 26px;
+}
+
+.register-choice-item input[type="date"] {
+  color: var(--border);
+}
+
+.register-choice-item textarea {
+  resize: none;
+}
+
+.register-choice-item {
+  margin-bottom: 4px;
+}
+
+/* Answer */
+.answer-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-search {
+  display: flex;
+  align-items: center;
+}
+
+.answer-search .sheet-index-label {
+  width: 75px;
+}
+
+.answer-search .sheet-index-number {
+  margin-left: 20px;
+  margin-right: 12px;
+}
+
+/* Answer - sheet */
+.sheet {
+  padding: 24px 50px;
+  width: 600px;
+  margin: 48px auto;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 var(--shadow);
+  background-color: var(--back);
+}
+
+.sheet-title {
+  font-size: 20px;
+  margin-right: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--title);
+  margin-bottom: 36px;
+}
+
+.sheet-index {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.sheet-index-label {
+  display: inline-block;
+  width: 40px;
+  color: var(--title);
+}
+
+.sheet-index-number {
+  margin-right: 30px;
+}
+
+.sheet-index-number input {
+  width: 80px;
+}
+
+/* Answer - questions */
+.question {
+  margin-bottom: 30px;
+}
+.question-title {
+  font-size: 20px;
+  color: var(--title);
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+/* Answer - inputs */
+.input-list {
+  padding: 0 10px;
+}
+.input {
+  margin-bottom: 12px;
+}
+
+.input label {
+  font-size: 16px;
+}
+
+.input-name {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.input-name-inline {
+  display: inline-block;
+  margin-right: 6px;
+}
+
+/* Answer - choices */
+.choices-item {
+  margin-bottom: 4px;
+}
+
+/* Answer List */
+.answer-list {
+  margin-top: 48px;
+}
+
+.answer-list ul {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.answer-list li {
+  font-size: 18px;
+  padding: 6px 10px;
+}
+
+.answer-list a {
+  color: var(--text);
+  transition: 0.3s;
+  text-decoration: underline 1.5px solid transparent;
+}
+
+.answer-list a:hover {
+  text-decoration: underline 1.5px solid var(--text);
+}
